@@ -1,3 +1,14 @@
+Project Overview
+Dataset
+Database Schema
+Setup Instructions
+Data Import
+ETL Process
+Analysis Queries
+Key Findings
+
+
+
 /* 
 =================================================
 Create Database and Schemas
@@ -92,5 +103,24 @@ CREATE TABLE bronze.bronze_erp_px_cat_g1v2 (
 id VARCHAR(50),
 cat VARCHAR(50),
 subcat VARCHAR(50),
+
+
+CSV files were imported using pgAdmin:
+
+1. Right-click the table
+2. Select Import/Export Data
+3. Choose the CSV file
+4. Set Format = CSV
+5. Set Header = Yes
+6. Click Import
+
+
+
+
+
+
+
+
+
 maintenance VARCHAR(50)
 );
