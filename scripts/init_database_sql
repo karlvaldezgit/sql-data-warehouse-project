@@ -107,8 +107,11 @@ CSV files were imported using pgAdmin:
 5. Set Header = Yes
 6. Click Import
 
-
-
+-- If encounters importing errors. Alter columns to text.
+ALTER TABLE bronze.crm_sales_details
+ALTER COLUMN sls_order_dt TYPE TEXT,
+ALTER COLUMN sls_ship_dt TYPE TEXT,
+ALTER COLUMN sls_due_dt TYPE TEXT;
 
 
 
