@@ -185,3 +185,14 @@ subcat VARCHAR(50),
 maintenance VARCHAR(50),
 dwh_create_date TIMESTAMP DEFAULT NOW()
 );
+
+
+
+
+
+
+
+
+
+
+
