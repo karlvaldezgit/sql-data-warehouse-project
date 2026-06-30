@@ -194,7 +194,7 @@ CLEANING AND INSERTING INTO SILVER SCHEMA TABLES
 
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.crm_cust_info
-TRUNCATE TABLE silver.crm_cust_info
+TRUNCATE TABLE silver.crm_cust_info;
 INSERT INTO silver.crm_cust_info (
 cst_id,
 cst_key,
@@ -227,12 +227,12 @@ FROM
 		ORDER BY cst_create_date DESC) as flag_last
 	FROM bronze.crm_cust_info
 	WHERE cst_id IS NOT NULL)
-WHERE flag_last = 1
+WHERE flag_last = 1;
 
 
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.crm_prd_info
-TRUNCATE TABLE silver.crm_prd_info
+TRUNCATE TABLE silver.crm_prd_info;
 INSERT INTO silver.crm_prd_info(
 prd_id,
 prd_nm,
@@ -265,7 +265,7 @@ FROM bronze.crm_prd_info;
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.crm_sales_details
 
-TRUNCATE TABLE silver.crm_sales_details
+TRUNCATE TABLE silver.crm_sales_details;
 INSERT INTO silver.crm_sales_details(
 sls_ord_num,
 sls_prd_key,
@@ -304,11 +304,11 @@ CASE
 	THEN (sls_sales / NULLIF(sls_quantity,0))
 	ELSE sls_price
 END AS sls_price
-FROM bronze.crm_sales_details
+FROM bronze.crm_sales_details;
 
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.erp_cust_az12
-TRUNCATE TABLE silver.erp_cust_az12
+TRUNCATE TABLE silver.erp_cust_az12;
 INSERT INTO silver.erp_cust_az12 
 (cid, bdate, gen)
 SELECT
@@ -325,12 +325,12 @@ CASE
 	WHEN UPPER(TRIM(gen)) IN ('F', 'FEMALE') THEN 'Female'
 	ELSE 'n/a'
 END AS gen
-FROM bronze.erp_cust_az12
+FROM bronze.erp_cust_az12;
 
 
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.erp_loc_a101
-TRUNCATE TABLE silver.erp_loc_a101
+TRUNCATE TABLE silver.erp_loc_a101;
 INSERT INTO silver.erp_loc_a101 (
 cid, cntry
 )
@@ -342,11 +342,11 @@ CASE
 	WHEN TRIM(cntry)= '' OR cntry IS NULL THEN 'n/a'
 	ELSE TRIM(cntry)
 END AS cntry
-FROM bronze.erp_loc_a101
+FROM bronze.erp_loc_a101;
 
 -- Truncating data if exists before inserting
 -- Cleaning query and inserting of bronze.erp_px_cat_g1v2
-TRUNCATE TABLE silver.erp_px_cat_g1v2
+TRUNCATE TABLE silver.erp_px_cat_g1v2;
 INSERT INTO silver.erp_px_cat_g1v2(
 id,cat,subcat,maintenance
 )
@@ -355,7 +355,7 @@ id,
 cat,
 subcat,
 maintenance
-FROM bronze.erp_px_cat_g1v2
+FROM bronze.erp_px_cat_g1v2;
 
 
 
