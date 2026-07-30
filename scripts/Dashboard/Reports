@@ -80,6 +80,7 @@ customer_name,
 age
 
 4)===================================
+CREATE VIEW gold.report_customers AS
 WITH base_query AS (
 SELECT 
 f.order_number,
