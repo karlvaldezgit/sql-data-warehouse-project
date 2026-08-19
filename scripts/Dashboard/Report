@@ -25,7 +25,7 @@ CREATE VIEW gold.report_customers AS
 WITH base_query AS (
 /*
 ------------------------------------------------------------
-1) Base Query: Retrieves core columns from tables.
+Base Query: Retrieves core columns from tables.
 ------------------------------------------------------------
 */
 SELECT 
@@ -48,7 +48,7 @@ WHERE order_date IS NOT NULL
 , customer_aggregation AS(
 /*
 ------------------------------------------------------------
-1) Customer Aggregations: Summarizes key metrics at customer level.
+Customer Aggregations: Summarizes key metrics at customer level.
 ------------------------------------------------------------
 */
 SELECT 
