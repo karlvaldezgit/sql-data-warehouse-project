@@ -69,7 +69,11 @@ customer_number,
 customer_name,
 age
 )
-
+/*
+------------------------------------------------------------
+Final Query: Combines all customer results into one output.
+------------------------------------------------------------
+*/
 SELECT
 customer_key,
 customer_number,
