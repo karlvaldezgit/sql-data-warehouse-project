@@ -158,7 +158,11 @@ LEFT JOIN gold.dim_products AS p
 ON f.product_key = p.product_key
 WHERE order_date IS NOT NULL ----- only consider valid dates
 ),
-
+/*
+------------------------------------------------------------
+Product Aggregations: Summarizes key metrics at product level.
+------------------------------------------------------------
+*/
 product_aggregations AS(
 SELECT
 product_key,
@@ -181,7 +185,11 @@ category,
 subcategory,
 product_cost
 )
-
+/*
+------------------------------------------------------------
+Final Query: Combines all product results into one output.
+------------------------------------------------------------
+*/
 SELECT 
 product_key,
 product_name,
@@ -208,5 +216,4 @@ CASE
 	WHEN lifespan = 0 THEN total_sales
 	ELSE total_sales / lifespan ------ Average Monthly Revenue
 END AS avg_monthly_revenue
-FROM product_aggregations
-
+FROM product_aggregations;
